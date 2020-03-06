@@ -18,7 +18,7 @@ require 'http'
 require 'json'
 
 response = HTTP.get("https://aurora-ordering.tesla.com/api/v1/installations/913758/geometry")
-converter_data = response.parse[0]["site"]
+converter_data = response.parse[0]["site"] #see nils.rb
 
 #In order to replace `nil` with `[]`, I converterd converter_data to a string
 
@@ -30,7 +30,7 @@ updated = data_string.gsub("nil", "[]")
 
 #To convert the string back to a hash/JSON data, I did some research and used the following 
 
-updated = JSON.parse updated.gsub('=>', ':')
+updated = JSON.parse updated.gsub('=>', ':') #see converter_data_rocket.json for output 
 
 #This returns the exact collection of k,v pairs that I need, however it has hash rockets instead of colons. The returned data is saved to converter_data_rocket.json below and in the repo.
 
