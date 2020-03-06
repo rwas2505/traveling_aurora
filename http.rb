@@ -10,16 +10,12 @@ converter_data = response.parse[0]["site"]
 
 ##THIS WORKS BUT THE `=>` NEEDS TO BE CHANGED TO `:`##
 
-# data_string = converter_data.to_s
+data_string = converter_data.to_s
 
-# updated = data_string.gsub("nil", "[]")
-# updated = JSON.parse updated.gsub('=>', ':')
+updated = data_string.gsub("nil", "[]")
+updated = JSON.parse updated.gsub('=>', ':')
 
-# p updated
-
-
-#the below code will delete the k,v pair if the value is nil. Need to check to see if deleting the k,v will still work in imagaery converter. Still has hash rockets.
-
+#the below code will delete the k,v pair if the value is nil. Need to check to see if deleting the k,v will still work in imagaery converter. Still has hash rockets so doesn't solve problem.
 
 # converter_data_roofs = response.parse[0]["site"]["roofs"]
 # converter_data_obstructions = response.parse[0]["site"]["obstructions"]
