@@ -11,11 +11,13 @@ converter_data = response.parse[0]["site"]
 converter_data = converter_data.to_s
 converter_data = converter_data.gsub("nil", "[]")
 converter_data = JSON.parse converter_data.gsub('=>', ':')
-# final = converter_data.to_json 
+final = converter_data.to_json 
 # final = @converter_data.to_json #uncomment to call local hard code when off vpn from converter_data_hash.rb
 
-file = File.open("/Users/ryan/Desktop/AURORA.json", "w"){
+file = File.open("C:/Users/rwaszak/Desktop/Dev/aurora_grab/aurora_data.json", "w"){
   |file| file.puts final} 
+
+
 
 #https://stackoverflow.com/questions/32388756/replacing-all-null-occurence-in-ruby-string
 #https://stackoverflow.com/questions/1895295/how-can-i-replace-every-instance-of-a-pattern-in-ruby
