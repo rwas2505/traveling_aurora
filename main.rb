@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 require 'http'
 require 'json'
 # require './converter_data_hash.rb' #uncomment to call local hard code when off vpn
